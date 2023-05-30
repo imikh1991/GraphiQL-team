@@ -1,0 +1,2 @@
+# GraphiQL-team
+Clone GraphiQL
