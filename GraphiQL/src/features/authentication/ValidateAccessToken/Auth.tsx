@@ -28,13 +28,10 @@ export const AuthProvider = ({ children }: Props) => {
         navigate('/auth');
         setCurrentUser(null);
         setPending(true);
+        alert(pending);
       }
     });
-  }, [navigate]);
-
-  if (pending) {
-    console.log('Loading...');
-  }
+  }, [pending, navigate]);
 
   return (
     <AuthContext.Provider

@@ -5,7 +5,6 @@ import { useCallback } from 'react';
 export const useHandler = () => {
   const navigate = useNavigate();
   const handleClick = useCallback(() => {
-    console.log(`Clicked button!`);
     signInWithEmailAndPassword(auth, 'email', 'password')
       .then(() => {
         alert('Signed-in E-mail -> Welcome!');

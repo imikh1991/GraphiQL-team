@@ -10,7 +10,6 @@ import { ToastContainer, toast } from 'react-toastify';
 function Reset() {
   const [email, setEmail] = useState('');
   const [user, loading, error] = useAuthState(auth);
-  console.log('user>>>', user);
   const navigate = useNavigate();
   useEffect(() => {
     if (loading) return;
@@ -26,7 +25,7 @@ function Reset() {
       .then(() => {
         navigate('/');
       })
-      .catch((error) => toast.error(error.message)); // Handle reset error
+      .catch((error) => toast.error(error.message));
   };
 
   return (

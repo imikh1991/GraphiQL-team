@@ -14,7 +14,7 @@ export default function AuthForm() {
   const { t } = useTranslation();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [user, loading, error] = useAuthState(auth);
+  const [user, loading] = useAuthState(auth);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -22,9 +22,6 @@ export default function AuthForm() {
       return;
     }
   }, [user, loading, navigate]);
-  if (error) {
-    console.error(error);
-  }
 
   const { currentUser } = useContext(AuthContext);
   // берем из контекста AuthContext

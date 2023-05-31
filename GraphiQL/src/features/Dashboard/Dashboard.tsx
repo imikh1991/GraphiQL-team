@@ -6,7 +6,7 @@ import { auth, db, logout } from '../authentication/firebase';
 import { query, collection, getDocs, where } from 'firebase/firestore';
 
 function Dashboard() {
-  const [user, loading, error] = useAuthState(auth);
+  const [user, loading] = useAuthState(auth);
   const [name, setName] = useState('');
   const navigate = useNavigate();
   const fetchUserName = async () => {
@@ -24,7 +24,6 @@ function Dashboard() {
     if (loading) return;
     if (!user) return navigate('/');
     fetchUserName();
-    if (error) console.log(error);
   });
   return (
     <div className="dashboard">
